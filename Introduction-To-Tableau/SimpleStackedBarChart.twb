@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0514.2217                               -->
+<workbook original-version='18.1' source-build='2025.2.0 (20252.25.0514.2217)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='FIT3179_World_Population_Clean' inline='true' name='federated.0wvts540faso3d1fwlhil1yulspx' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='FIT3179_World_Population_Clean' name='textscan.0hjdovg1g2vver16ehvzh1a6cv57'>
+            <connection class='textscan' directory='C:/Projects/Data-science-tableau/Introduction-To-Tableau/data' filename='FIT3179_World_Population_Clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0hjdovg1g2vver16ehvzh1a6cv57' name='FIT3179_World_Population_Clean.csv' table='[FIT3179_World_Population_Clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Country Code' ordinal='0' />
+            <column datatype='string' name='Country Name' ordinal='1' />
+            <column datatype='integer' name='Year' ordinal='2' />
+            <column datatype='integer' name='Population' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[FIT3179_World_Population_Clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country Code]</local-name>
+            <parent-name>[FIT3179_World_Population_Clean.csv]</parent-name>
+            <remote-alias>Country Code</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country Name]</local-name>
+            <parent-name>[FIT3179_World_Population_Clean.csv]</parent-name>
+            <remote-alias>Country Name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[FIT3179_World_Population_Clean.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[FIT3179_World_Population_Clean.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Country Code]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country Name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Year]' role='measure' type='quantitative' />
+      <column caption='FIT3179_World_Population_Clean.csv' datatype='table' name='[__tableau_internal_object_id__].[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]' role='measure' type='quantitative' />
+      <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='C:/Users/kaing/AppData/Local/Temp/TableauTemp/#TableauTemp_1l3f4bk0fpuuc31h2tu2e0vpvuqi.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/28/2025 07:12:26 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Country Code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country Code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country Code</remote-alias>
+              <ordinal>0</ordinal>
+              <family>FIT3179_World_Population_Clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>297</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country Name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>FIT3179_World_Population_Clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>297</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>2</ordinal>
+              <family>FIT3179_World_Population_Clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>58</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Population</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Population]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Population</remote-alias>
+              <ordinal>3</ordinal>
+              <family>FIT3179_World_Population_Clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14559</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Year:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>1968</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>1988</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>2008</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>1960</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>1980</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>2000</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>1964</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>1984</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>2004</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>1972</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>1992</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>2012</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>1969</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>1989</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>2009</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>1965</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>1985</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>2005</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>1978</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>1998</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>1961</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>1981</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>2001</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>1976</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>1996</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>2016</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>1966</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>1986</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>2006</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>1973</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>1993</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>2013</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>1974</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>1994</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>2014</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>1977</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>1997</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>2017</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>1979</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>1999</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>1970</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>1990</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2010</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>1967</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>1987</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>2007</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>1962</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>1982</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2002</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>1975</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>1995</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>2015</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>1971</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>1991</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>2011</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>1963</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>1983</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>2003</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='FIT3179_World_Population_Clean.csv' id='FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B'>
+            <properties context=''>
+              <relation connection='textscan.0hjdovg1g2vver16ehvzh1a6cv57' name='FIT3179_World_Population_Clean.csv' table='[FIT3179_World_Population_Clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Country Code' ordinal='0' />
+                  <column datatype='string' name='Country Name' ordinal='1' />
+                  <column datatype='integer' name='Year' ordinal='2' />
+                  <column datatype='integer' name='Population' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FIT3179_World_Population_Clean' name='federated.0wvts540faso3d1fwlhil1yulspx' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wvts540faso3d1fwlhil1yulspx'>
+            <column datatype='string' name='[Country Name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='integer' name='[Population]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Year]' role='measure' type='quantitative' />
+            <column caption='FIT3179_World_Population_Clean.csv' datatype='table' name='[__tableau_internal_object_id__].[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country Name]' derivation='None' name='[none:Country Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Population]' derivation='Sum' name='[sum:Population:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wvts540faso3d1fwlhil1yulspx].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wvts540faso3d1fwlhil1yulspx].[__tableau_internal_object_id__].[cnt:FIT3179_World_Population_Clean.csv_5BED713584564C239203A24B6552C62B:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wvts540faso3d1fwlhil1yulspx].[sum:Population:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Country Name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Country Name:nk]' member='&quot;Afghanistan&quot;' />
+              <groupfilter function='member' level='[none:Country Name:nk]' member='&quot;Albania&quot;' />
+              <groupfilter function='member' level='[none:Country Name:nk]' member='&quot;Algeria&quot;' />
+              <groupfilter function='member' level='[none:Country Name:nk]' member='&quot;American Samoa&quot;' />
+              <groupfilter function='member' level='[none:Country Name:nk]' member='&quot;Australia&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:qk]' included-values='in-range'>
+            <min>2004</min>
+            <max>2017</max>
+          </filter>
+          <slices>
+            <column>[federated.0wvts540faso3d1fwlhil1yulspx].[:Measure Names]</column>
+            <column>[federated.0wvts540faso3d1fwlhil1yulspx].[none:Country Name:nk]</column>
+            <column>[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0wvts540faso3d1fwlhil1yulspx].[Multiple Values]</rows>
+        <cols>[federated.0wvts540faso3d1fwlhil1yulspx].[none:Country Name:nk]</cols>
+      </table>
+      <simple-id uuid='{99442C29-1CAC-4770-AAF9-33ED350B2632}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Country Name:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wvts540faso3d1fwlhil1yulspx].[none:Country Name:nk]</field>
+            <field>[federated.0wvts540faso3d1fwlhil1yulspx].[none:Year:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F2070A75-3F93-4516-8CD8-01F8105A2DCE}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAATdUlEQVR4nO3dZ3Ac93nH8e/uXsMV4NAO/VBJFIJVJCWxSJSsbsnOZGJrPEpizyRO4kxe
+      2LHzLiPLnrjEyigzSSbW2FHi8sJR4tiS1UJRjaJIUxQbWEGAAEn03nG4trt5ARCskWx5AfL4
+      fz6vgJ27Z/+7uN/tf+8W+2i2bdsIoSBN0zT9Rg9CiBtJAiCUJgEQSpMACKVJAJaLbZNOJpid
+      nSUWT2A58NmDbdv8tp9h2JZJfC5GKm0u/G6RSCRQ9ZMQCcCysBnvOc7ffe0v+eKffYk//+rX
+      aR+Y/Z2rvvrjf+X8tPlbPWdmtI2/+uynefpnu7FsiA138r1v/iPjv/NoMpPrRg9ABXZikp88
+      +yyVj36Zrz+wmnQygY1BOj7Dkf27aR+xuWvH3ZTlhxjtO4edXUphyEv/uTN4ItX4U+MMTJnM
+      DZ/jwpjFHVvvIDVyjl2vvcRkdDPx6nIaSrI4MxCnMtuipWuS0oBNdEUTlpnk/NlOimsb8LsA
+      y8LjjjBwYidnRrdSYVvE4/NHgOTsOMeOHGFoxqJx3UYqi8LMDHcxOqcxeL6VVKCMxjI/LS2t
+      FK5cT3N1BDsV49CeN+mc8nLvfXdTGPShaTd6j//m5AiwDKZHe+kay+KBu1ajAW6PF4/b4tX/
+      eIYXD3TjjvfwrW8/Q/dEnD3//UPePTMIwIvPfof958bpObqTv33yO+w7eZ6WXT/m315uYWyo
+      h8m5FD2d7XT1j2APHOGpf/ohTz/1Tfaf6aFl54+YsGxmeg/x9LOvoF/2VucJlfLoXbW88Mp7
+      XD6D6jj8LscujDA73Ma3v/U0vVMpjr/xU5565jnae/r46T88yTM/epGBntN863v/zOhsktee
+      +y672mbJTp7lye8+x1zaWt6d+zuSACwD00xgWX48nsuWTfSy79wMX/iTP+Uzf/hFdhTNcbBz
+      8P+t0bjtMb7wx0/we/dtJhWPsXLjvdQUBNnx2B/w4Jb5YA2e7eTRv/l7vvz4/Wz95GO80zLA
+      ib17WXXvffiuqKbRtO0RzNNvcGY0sbDMpmbdVhpKQiRsnfTsBKOTMQBuf+iz/NETn+eOFRXc
+      //jneOJznyZop0jFeth5cJqHdmxm9ZZHCPceoSuedHjvLS0JwDIIhIrw+4Y53z0NXDx5tdB0
+      Fy5DA1vD7dYxzctPRT/6tFS7aq5RtnYrGypyAPAWruP1F37F3qO93Ltt1TXP9eSU8si2al58
+      de/8msxZ/vP7z3B02MUd27dREQ7+BltmY81NcOTQBxw4cJhNj32WiDezZtUSgGXgySniU/es
+      59//8Wlefv0tfvb883Qnc1gd0XjhpZ0c2vsqe87D2qoIHo9Fy/597PzVzznUOfGhdUvK8nj3
+      9V0cab1wTVy8LgP/2ZfoDK2hIfd6L0qdVdsfxmrbzfkpwE4zORUnHA4x1NlK99jUR2+Yu5ht
+      6woZmXPT0LgCbW6GZIZdWWM89dRTT93oQdzyNJ2yFWuoi7jp6R0kK6+UhhV1rFm/ltme05zp
+      j/PJx5+gqTxMpDxKfHQAO1TO9q23UVdXR144h0hxGcUF2bh9gfmf84OsbGpmrPccKU+Yuqoo
+      +YXFVJUWXFwlo+2HqdrxOdZEw4tD0Q03+UXFRCvL8PlC1NVUEK1bRV1NFXWVxfR0nsWVX8Nd
+      mzdQWVlOOJxLcWk5hdlZBHLClFVECfmyyCuIUF1ZwZqNG0mN9tDZPUh+VT0N0SIMPTPOgr/x
+      jW98Q8u0i+EuDvfqw7+4nE3viX08++IHfOVrXybPe6PHc3PSNE3LyACk02ncbveNHorIcHI1
+      qFCeBEAoTQIglCYBEEqTAAilSQCE0iQAQmkSAKE0CYBQmgRAKE0CIJQmARBKkwAIpUkAhNIk
+      AEJpEgChNAmAUJoEQChNAiCUJgEQSsusuxgJDnd/QMpKOVoz4AnQXLLW0ZqZQgKQYX7w639h
+      Kj7paM2qvBq+/egzjtbMFDIFEkqTAAilSQCE0iQAQmkSAKE0CYBQmgRAKG0ZAmBjmtf2jbIs
+      k8y6L7W4FTn2RVj7B69zuDtOyOfCm13InbdvwpgbYNcbezB1AwKlPLhjMz4jyd7X/5ehhEYq
+      pbHjoYeJBN28/dJzzOVs4eHtjWga2LbJzuefJVX6CR67q8GpYQpxBYcCYDI2GWfrJx6hNKQD
+      GpoGLUcOE73tXlZHczn93k5O9U5QmWpjOreJT21eQaznKG8dbOOxu1eR9haRHjtLwqrHZ+hY
+      kx3EPCVYscRHrl2Ij8uZKZAZY3zMYm52lInpGGgampZkbDpJaWEumqYTrSplcGiMvu4JKqtL
+      MDSNUHktxkQP8501dRoiHtpH5rsMnj3WTuOGRqQPjFhKzhwBNC8rm2sY7++hb6yfwbifRx68
+      E5fhw+Waz5hhGCSTSUzDTbbbWHieC9NMLJ4LVK5u5I33W2mONNMxpXN/WOfUwipM08SyLGzb
+      xrIsLCuz+tE6ZSka+ti2TSKh5pHWmQDoHmqa1gDzO/Pw7tfoHUtga3GSyTR4XCQScQKBAnyz
+      aabm0pALmHF0Vwh94TikZZXjjrcwM+pGy6tH59JVj4ZhYBiG8i2SlqI3mqZpeL1qNhJzZAqU
+      mBnj9JkOUpaNlZhiYCJBTiBAeUE2p852Y1kpjp3qorK0gOiKClqPniBp2nS3HMQbrcO1+DfV
+      WFsR4Jc721i1rtqJoQnxoRw5Anj82WSlO9j5ymlszaB+490UBd2w/k4m9+3hf35xhKqmjdRE
+      Ahg0srnyAC+98HNCRXXcfUcZmgZV1bUYOkSa1hGd7qYiC2wtj/rqtBNDFOK6HOwSaV/6XF/T
+      Fk9eLy+/ePi2beyrl/2ma1F8CvQX//V5+X8Ah2iapjn4DzHzH31eZyXXWyif7oibglwKIZQm
+      ARBKkwAIpUkAhNIkAEJpEgChNAmAUJoEQChNAiCUJgEQSpN7g2aYspJiwqmgozWLQxFH62US
+      CUCGyc/Lw286e+1+blaOo/UyiUyBhNIkAEJpEgChNAmAUJoEQChNAiCUJgEQSpMACKVJAITS
+      JABCaRIAoTQJgFCaBEAoTQIglCYBEEqTAAilSQCE0iQAQmkSAKE0CYBQmgRAKM3hu0JYDHVf
+      wA4VURT2YyZmOX+hm6RpAzollTWE/W5mxvrp7BrAX1BOTVkBuqYx1N2BHSohEvajMd8Kaain
+      EzMrQmlByNlhCrHA0SPAzOA53n7nDY6dHQBgur+dU91jeDwePB4vug7pmX52vXMQbyhM/7E9
+      tHRNYANHW/ayd8+hSz3FrFn2vvkq+w6dc3KIQlzBsQDYqRhHT3TQtKoBY6EF3sT4NGVVddTW
+      1lJbW0W2z01P6ylKVt/Oytpqtty1kQsnzmDaoHkKyNHGGU/ON8Ce6TpGoHot2hI0hhbiIoem
+      QDZdrUfxlDRR7O1jeHx+aSIRp6fjJHMDbQRyy2iqr2Jy2qSwJoAGGMF89MQxzIWm72tWFHCy
+      c5ztjQWcaBtn/YY69hyKA1zRHd6yLFKp1HXGoYKl6RSv6v50JABzY10cOTfD5juzmOydJTbj
+      YWYuSc36rRTNJbHMFB1H93HIyCJwVX/Iy7tI5lSvYmrXYewVGxhJB9nkvvJxuq5j2/biz8IZ
+      GuruT0cCkDZtCsJ+ujramRnqZ2h2hsGJSqqLcgh7/fMrqi3nvcFpysIuuodmqMkLYE0Pk/YV
+      Ylzc93o2EU+Ms63HyVu5Fo3BxXVomoamadi2jWVZGIbhxNAzTvZ4P+7ktKM1gyFD2f3pSABC
+      hVVsK6wCYKRDRx/Pp7YkxPF9uxm1fWT7XHSf66b57gcoC4Y58sq7vD9TxXjXWVbe/gjGZQeF
+      5qYSvv/Ldr74pa0wPXj9FSqspLOFZHzM0ZrZBbOwydGSGcPBTvHzzFSchGng97lJJ+OMj4+T
+      SNv4QzmEQ350TSM+M07f4CiBcITCvBC6phGLzZKV5Uez04xPxQnnBMFKMRu3CQYu3QxW9U7x
+      b/5kxxIEoJGtv/+8ozUzgcOd4ucZbh/+hdemy+OjsKjkmsf4grnUBHOvWOb3BxZG5SY3vFDA
+      8BAMOD1CIS5R88xHiAUSAKE0CYBQmgRAKE0CIJQmARBKkwAIpUkAhNIkAEJpEgChNAmAUJoE
+      QChNAiCUJgEQSpMACKVJAITSJABCaRIAoTQJgFCaBEAoTQIglCYBEEqTAAilSQCE0hy/MdZy
+      My2TyfjEktQOZ+Wia/IecSvL+AAMzwzx1y98aUlq/+DxnxL03lzdaaqjUdLJbEdr+rLLHK2X
+      STI+AKopzM/HTnscralnhR2tl0nk+C6UJgEQSpMACKVJAITSJABCaRIAobRlCICNZV3bhcm2
+      LaQFsLjRHP0ewE7PcWD3m7grN7OhLoKZmObgr/cxMJmgsKqJzatrcWkmbUffp7V7BG92MVu3
+      bCToMTi85yVSeevZ3FSOps0H5OBbL5IsvI2ta6JODlOIRQ4eAWx6zhxjcHaO8Yn5Np4dLQdI
+      5tfz6KMPQt8J2genmek7zclhNw8+8hircmPsbenCtmEklqav7TjphcOCPddH19A0/X3jzg1R
+      iKs4FoDERD+nB9Osq48utMJO0zcyRX11BYbhZVVDOb39Y3R39FLXXI/XpVPevJZk3znSNmia
+      l8psm67pNAB9p05SsWbtVW21hXCWI1Mg20xw/Ngp6prvwD99amFpGl3z4XHPN2D2eH3MxmIk
+      bBfhrItdIH1Y6Rksa/7XhjU1vHviPDVbajk1aLJtq4/u7jgApmliWdZio2xr4UmpVNKJTbiu
+      ZDJJgsSS1f84HO5qu1gzkbi5tnO5OBKAyf422vtj1GefpWfgAr0zY3RFc7FIkk5b4NUx0yl8
+      3mzcMYu5pDn/RCuFbmShLbzNu3Jrscd2kZxxk8oqx3vZOgxjvpv51X2C3Qlnr4u5nMfjwev1
+      fvQDl1FS03A6Apqm3XTbuVwcmQIFCqq5Z/tGiiMRCvJyCOXkke33UxDycmFgGNs2OdvZR0lR
+      HqXRPDrbu0hbNuPnW9EKo7gWR+GivtDN2++domZtoxNDE+JDOXIEcPuCFJcGAQgwSSInh3DQ
+      h3/9bbz7zj5eOgnecAU7SnPw6qspuvAWL7/cAXoW2+/ZgK5Bbl4+ugaVzfX8+rV2PpHnglk/
+      BXlywapYOpq9FJPKy9hWmkTSwut1o12c69gW8UQCt8eHof92p7lXT4EGpvqV+n+A6eNfwU5P
+      O1pTz4oSbHjS0ZqZQNM0bcnfXjXdhc93zUJ8vqylXrUQH0kuhRBKkwAIpWX8Gaau6+RkL808
+      ffGcRdyyMj4AbreLuprqJamt63KAvNXJX1goTQIglCYBEEqTAAilSQCE0iQAQmkSAKG0jP8e
+      QDX7RnNJJN2O1gxn53CXoxUzhwQgw/zoQjmT8TlHa9YVFCobAJkCCaVJAITSJABCaRIAoTQJ
+      gFCaBEAoTQIglCYBEEqTAAilSQCE0iQAQmkZfy2QJz5L4/4XlqS2sfKrt8AeEh/mlvjzys1L
+      xMclUyChNAmAUJoEQChNAiCUJgEQSpMACKVJAITSnPkewLZJp5PEE0ls5ru/uF06tmUyF49z
+      sQmTx5eF29BJpxLEYnFc3iyyFlonJeMxbMOLx22gMd8KKZWYw9Y9eD23xNcV4ibkzCsrNcP+
+      9/YRs1xo6TliWpj77t2CNXial/e3U1KQC7ioX7+RIn+SN1/eCaE8ZkbH2HDfo1TlZ/H2qz8h
+      FtjEpx/YMH9ffjvFqz/7PqnyB/jM/asdGaYQV3MmAO4gW+95YOGFa7HvrVcYm07C+CR1a7aw
+      aWXR4kP7TxzAU3sHO9ZUkBpt5ZVDrUTvX48ejOKN9xIz1xN0aSRHTqNHmtBNy5EhCnE9zgRA
+      07DTSSanJug918a0UUxhtpdzp2eYcvVztmOWcH6EvJwAw0MxytbkogGe/HJcs3tIL7zGm8uD
+      tPbFuC0apPV4N6vXr+DwsflO8bZtX9El/WKn+KVscmnblzrS38psbCW283ocm1yn4lO0nTrJ
+      2HScQEEemgbRpvW4RiZJxafZ9/r7VN/5MLbhwm1cvHpHw7bSXGx9Xty4imO7T0D5OrrjXh7y
+      w+GFR1qWtRgC0zQXX/imaTq1CdcwTRMtnV6y+h/PEgTehvRNt53Lw7EAeIMFbN52D9gWR3fv
+      pGOglMbSQlbkRgAoD1m82ztIvddmfDJBVW4AEtPYnlwWOxG5IwStDxjuOYmvdBUal/rhGoYB
+      XHrHv9gnOOVauhNkl8uNx+NZsvofj/OX/mmadhNu5/Jw5GPQuckhTp46w/DIKCPD/QxOpwhk
+      6bQePkhHdz+jI0McO9VFWUkh0fo6OlsOMTA0wrH9ByhYuRLXZaNYW5fLL14/x+pVJU4MTYgP
+      5cjbpzeQg1/ro73tDJqms3LjNqJ52cRdVZw+08FAyiK8YiMNFbkYeh47NiQ5frKF7Egzt68o
+      RAOaV6/FpUNu7Vq2m2VE3GD7S9i0ZummOEI4EgDd5aW6cR1X92rMyi5kw6bCax5fUFHPPRX1
+      VywrKSlb+CnIqsYgAJonm2ipEyO8ddRFCphJJBytWR4OO1ovk8g3TBmmIBDA73H29ui5fr+j
+      9TKJXAohlCYBEEqTAAilZfw5gMftpqFuxZLUNgx5f7jVZXwADMMgPzd3SWrrmgTgVid/YaE0
+      CYBQmgRAKE0CIJQmARBK+z/ZFMC80XSJaQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
