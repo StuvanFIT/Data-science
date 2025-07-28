@@ -12,6 +12,28 @@ A: Pivoting, filtering or using the tableau source page.
 
 ## Dimensions and Measures
 
+### 🔷 Dimensions
+- **Categorical** fields that describe "what" your data is about.
+- Typically contain qualitative values like:
+  - Names (e.g., Country, Product)
+  - Dates (e.g., Year, Month)
+  - Geographies (e.g., Region)
+- Affect the **level of detail** in the view.
+- Usually treated as **discrete (blue)** fields.
+
+### 🔶 Measures
+- **Quantitative** fields that can be **aggregated**.
+- Typically contain numeric values:
+  - Sales
+  - Profit
+  - Population
+  - Quantity
+- Usually **continuous (green)** fields that Tableau can:
+  - Sum
+  - Average
+  - Count
+  - etc.
+
 Tableau identifies each field as a dimension or measure in the Data pane, depending on the type of data the field contains. You use these fields to build your analysis.
 
 Data fields are made from the columns in your data source. Each field is automatically assigned a data type such as integer, string, or date, and a role: a discrete dimension or continuous measure (or less commonly, a continuous dimension or discrete measure).
@@ -21,59 +43,100 @@ Dimensions group or segment the data. Dimensions typically contain qualitative v
 Measures are aggregated. Measures typically contain numeric, quantitative values that you can measure. When you drag a measure into the view, Tableau applies an aggregation on the field.
 To learn more about aggregation, see List of Predefined Aggregations in Tableau and Aggregate Functions in Tableau.
 
-So in summary:
--Dimensions: Categorical fields that describe "what" your data is about.
-i.e.: names, dates, geographies, categories
--Measures : Quantitative field that can be aggregated (summed, averaged) like Sales, Profit, Quantity, Discount, Population
+So in summary: 
+-Dimensions: Categorical fields that describe "what" your data is about. 
+i.e.: names, dates, geographies, categories \
+-Measures : Quantitative field that can be aggregated (summed, averaged) like Sales, Profit, Quantity, Discount, Population 
 
-## Blue and Green Fields
-Green: continuous field.
 
-Blue: discrete field.
+
+## 🟦 Blue and 🟩 Green Fields
+
+- **Green (Continuous)**: Used for numeric axes and ranges (e.g., trends over time, scatter plots).
+- **Blue (Discrete)**: Used for grouping/categorising data (e.g., labels, dimension filters, bar chart categories).
+
 
 
 
 ## Dataset shape and reshaping
 ![alt text](./images/image-1.png)
 
-The shape of this dataset is not suitable for analysis:
-- Each year is treated as a separate column.
-- Tableau works best with long format data, where each row represents a single observation and years are values in a single column.
+The shape of this dataset is not suitable for analysis: \
+- Each year is treated as a separate column. \
+- Tableau works best with long format data, where each row represents a single observation and years are values in a single column. \
 
 ![alt text](./images/image-2.png)
 
-Dataset reshaping: [Cleaning and Reshaping your datasets](https://www.tableau.com/learn/get-started/data-structure)
-Pivot data from Column to Rows: [Pivot data from Column to Rows:](https://help.tableau.com/current/pro/desktop/en-us/pivot.htm)
+Dataset reshaping: [Cleaning and Reshaping your datasets](https://www.tableau.com/learn/get-started/data-structure) \
+Pivot data from Column to Rows: [Pivot data from Column to Rows:](https://help.tableau.com/current/pro/desktop/en-us/pivot.htm) \
 
 
 ## Measure Names and Measure Values
 ![alt text](./images/image-0.png)
-CNT(FIT3179_World_Population...)	Count of rows in the dataset. Tableau is auto-counting records.
-SUM(Population)	The total population (summed across your dimension, like year/country).
-SUM(Year)	The sum of the year values. Often not useful and can be misleading unless you’re counting events per year (usually we group by year, not sum it).
+CNT(FIT3179_World_Population...)	Count of rows in the dataset. Tableau is auto-counting records. 
+SUM(Population)	The total population (summed across your dimension, like year/country). 
+SUM(Year)	The sum of the year values. Often not useful and can be misleading unless you’re counting events per year (usually we group by year, not sum it). 
 
-These appear because Tableau includes all numeric fields (or aggregatable fields) in Measure Values unless you manually filter them using the Measure Names filter (which you already added on the left)
+These appear because Tableau includes all numeric fields (or aggregatable fields) in Measure Values unless you manually filter them using the Measure Names filter (which you already added on the left) 
+
+
+## 🧭 Tableau Workspace Overview
+
+### 🔠 Columns
+- Drag **dimensions** or **measures** here to define the **X-axis** of your chart.
+- Controls the **horizontal** layout or categories.
+
+### 📏 Rows
+- Drag fields here to define the **Y-axis**.
+- Controls the **vertical** layout.
+
+### 🎯 Marks Pane
+- Controls the **visual encoding** of the data (i.e., how marks are represented).
+- Components:
+  - **Color**: Apply color based on category or value
+  - **Size**: Adjust mark size
+  - **Label**: Show numeric or textual labels
+  - **Detail**: Adds additional info to marks without changing chart structure
+  - **Tooltip**: Display info when hovering
+
+### 🔍 Filters
+- Control **which data is included** in the view.
+- Can be applied to dimensions or measures.
+- Filters can be:
+  - **Context Filters** (affect other filters)
+  - **Top N Filters**
+  - **Relative Date Filters**
+
+### 🧲 Channels (aka Encoding Channels)
+These are **visual encodings** that map your data to graphical elements. Common channels:
+- **Position**: Most effective (used in scatter plots, bar charts)
+- **Length**: Good for comparison (e.g., bar heights)
+- **Color Hue**: Great for categorical data
+- **Color Saturation**: Can represent intensity or numerical ranges
+- **Size**: Can indicate magnitude, but harder to compare precisely
+- **Shape**: Useful for distinguishing categories (less for quantity)
+- **Text**: Often used for labels or tooltips
 
 
 ## What are the advantages of using a stacked bar chart in this scenario?
 - A stacked bar chart clearly shows defined individual segments that represent each year and how all the individual segments contribute to
-a total value (i.e. the population), so the entire stacked bar is the total population but we can observe the populations in each year for that country.
-- Shows how much each year contributes to the population
-- Saves space and becomes more compact
-- Easier for the human eye to intuitively compare total population across countries based on height
-- Easier to compared populations in specific years (i.e. If India's 2010 population is much larger than 2006, the stack shows that visually with a taller segment).
+a total value (i.e. the population), so the entire stacked bar is the total population but we can observe the populations in each year for that country. 
+- Shows how much each year contributes to the population 
+- Saves space and becomes more compact 
+- Easier for the human eye to intuitively compare total population across countries based on height 
+- Easier to compared populations in specific years (i.e. If India's 2010 population is much larger than 2006, the stack shows that visually with a taller segment). 
 
 ## What are the disadvantages of using a stacked bar chart in this scenario?
-- Be hard to read when you want to compare individual segments (e.g., compare only 2010 population across all countries). since they dont have the same "base point level"
-- Not great for showing trends over time
-- The reliance on COLOUR is needed. If the colorrs are too similar or the segments too small: it’s hard to tell them apart,  creates accessibility issues for color-blind users
+- Be hard to read when you want to compare individual segments (e.g., compare only 2010 population across all countries). since they dont have the same "base point level" 
+- Not great for showing trends over time 
+- The reliance on COLOUR is needed. If the colorrs are too similar or the segments too small: it’s hard to tell them apart,  creates accessibility issues for color-blind users 
 
 ## When to use
-“Which countries had the highest total population over multiple years?”
+“Which countries had the highest total population over multiple years?” 
 
-“How much did each year contribute to a country’s total population?”
+“How much did each year contribute to a country’s total population?” 
 
-“Did a country's population grow, shrink, or stay the same over time?”
+“Did a country's population grow, shrink, or stay the same over time?” 
 
 
 ## TableAU warning message
@@ -82,6 +145,6 @@ a total value (i.e. the population), so the entire stacked bar is the total popu
 This warning is telling you that you're about to add a field to a shelf (like Columns, Rows, or Color) that contains up to 263 distinct values, but Tableau recommends no more than 20 for optimal performance and readability.
 
 Why it matters alot:
-- Performance: too many members can slow down rendering and make the visualisation sluggish.
-- Charts with hundreds of categories (e.g., 263 countries or regions) can be hard to read and interpret.
-- Tableau tries to keep visualisations clean and effective, so it flags when you're likely to overwhelm the view. Clean visualisations are better for user experience and analysis.
+- Performance: too many members can slow down rendering and make the visualisation sluggish. 
+- Charts with hundreds of categories (e.g., 263 countries or regions) can be hard to read and interpret. 
+- Tableau tries to keep visualisations clean and effective, so it flags when you're likely to overwhelm the view. Clean visualisations are better for user experience and analysis. \
