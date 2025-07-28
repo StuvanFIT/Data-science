@@ -12,6 +12,8 @@ A: Pivoting, filtering or using the tableau source page.
 
 ## Dimensions and Measures
 
+[READ THIS ABOUT DIMENSIONS AND MEASURES](https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm)
+
 ### 🔷 Dimensions
 - **Categorical** fields that describe "what" your data is about.
 - Typically contain qualitative values like:
@@ -50,12 +52,30 @@ i.e.: names, dates, geographies, categories \
 
 
 
-## 🟦 Blue and 🟩 Green Fields
+# 🟦 Blue and 🟩 Green Fields
+![alt text](./images/image-4.png)
 
 - **Green (Continuous)**: Used for numeric axes and ranges (e.g., trends over time, scatter plots).
 - **Blue (Discrete)**: Used for grouping/categorising data (e.g., labels, dimension filters, bar chart categories).
 
+- Continuous means "forming an unbroken whole, without interruption". These fields are colored green. When a continuous field is put on the Rows or Columns shelf, an axis is created in the view.
+- Discrete means "individually separate and distinct." These fields are colored blue. When a discrete field is put on the Rows or Columns shelf, a header is created in the view.
 
+
+![alt text](./images/image-5.png)
+
+In the example on the left, because the Quantity field is Continuous, it creates a horizontal axis along the bottom of the view. The green field and the axis help you to see that it's a continuous field.
+
+In the example on the right, the Quantity field is Discrete. It creates a horizontal headers instead of an axis. The blue field and the horizontal headers help you to see that it's discrete.
+
+In both examples, the Sales field is set to Continuous. It creates a vertical axis because it's continuous and on the Rows shelf. If it was on the Columns shelf the axis would be horizontal. The SUM aggregation indicates that it's a measure.
+
+The absence of an aggregation function in the Quantity field name indicates that it's a dimension.
+
+# Dimensions in field of view
+Often, fields from the Dimension area are discrete when you add them to a view, with a blue background. Date dimensions and numeric dimensions can be discrete or continuous, and all measures can be discrete or continuous.
+
+When you drag a discrete dimension field to Rows or Columns, Tableau creates column or row headers.
 
 
 ## Dataset shape and reshaping
