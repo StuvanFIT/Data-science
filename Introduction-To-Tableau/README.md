@@ -101,6 +101,8 @@ These appear because Tableau includes all numeric fields (or aggregatable fields
 
 NOTE: We dont actually have to use Measure Values! I think it is more intuitive to use the direct parameter variable like SUM(POPULATION) as it is more clearer.
 
+<img width="962" height="590" alt="image" src="https://github.com/user-attachments/assets/25da9c74-df36-4559-8e53-71604d4fe7a7" />
+
 
 ## 🧭 Tableau Workspace Overview
 
