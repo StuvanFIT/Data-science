@@ -99,6 +99,8 @@ SUM(Year)	The sum of the year values. Often not useful and can be misleading unl
 
 These appear because Tableau includes all numeric fields (or aggregatable fields) in Measure Values unless you manually filter them using the Measure Names filter (which you already added on the left) 
 
+NOTE: We dont actually have to use Measure Values! I think it is more intuitive to use the direct parameter variable like SUM(POPULATION) as it is more clearer.
+
 
 ## 🧭 Tableau Workspace Overview
 
@@ -113,7 +115,7 @@ These appear because Tableau includes all numeric fields (or aggregatable fields
 ### 🎯 Marks Pane
 - Controls the **visual encoding** of the data (i.e., how marks are represented).
 - Components:
-  - **Color**: Apply color based on category or value
+  - **Colour**: Apply color based on category or value
   - **Size**: Adjust mark size
   - **Label**: Show numeric or textual labels
   - **Detail**: Adds additional info to marks without changing chart structure
