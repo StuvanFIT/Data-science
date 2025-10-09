@@ -16,7 +16,7 @@
   "data": [
     {
       "name": "source_0",
-      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/Football_Stadiums/Interactivity/stadium_capacities.csv",
+      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/stadium_capacities.csv",
       "format": {"type": "csv", "delimiter": ","},
       "transform": [
         {

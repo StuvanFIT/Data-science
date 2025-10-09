@@ -25,7 +25,7 @@
     },
     {
       "name": "source_3",
-      "url": "https://raw.githubusercontent.com/skai0008-cmd/Data-Visualisation-2-Football-Stadiums/main/stadiums.csv",
+      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/stadiums.csv",
       "format": {"type": "csv"},
       "transform": [
         {
