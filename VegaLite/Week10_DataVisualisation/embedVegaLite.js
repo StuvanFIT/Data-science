@@ -1,6 +1,6 @@
 
-var vg_1 = "/VegaLite/Week9_DataVisualisation/top_100_stadiums.vg.json";
-var vg_2 = "/VegaLite/Week10_DataVisualisation/stadiums_per_capita.vg.json";
+var vg_1 = "VegaLite/Week9_DataVisualisation/top_100_stadiums.vg.json";
+var vg_2 = "VegaLite/Week10_DataVisualisation/stadiums_per_capita.vg.json";
 
 vegaEmbed("#geo_map", vg_1).then(function(result) {
     
