@@ -1,5 +1,5 @@
 
-var vg_1 = "visualization.vg.json";
+var vg_1 = "top_100_stadiums.vg.json";
 
 
 vegaEmbed("#geo_map", vg_1).then(function(result) {
