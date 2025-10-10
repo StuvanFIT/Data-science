@@ -114,11 +114,7 @@
           "cursor": {"value": "pointer"},
           "fill": {"scale": "color", "field": "seats_per_1000"},
           "tooltip": {
-            "signal": "{\"Rank\": format(datum[\"rank\"], \"\"), \"Country\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"], \"Confederation\": isValid(datum[\"confederation\"]) ? datum[\"confederation\"] : \"\"+datum[\"confederation\"], \"Seats per 1,000 people\": format(datum[\"seats_per_1000\"], \".2f\"), \"Total Stadium Capacity\": format(datum[\"total_capacity\"], \",\"), \"Number of Stadiums\": format(datum[\"stadium_count\"], \"\"), \"Population\": format(datum[\"population\"], \",\")}"
-          },
-          "ariaRoleDescription": {"value": "bar"},
-          "description": {
-            "signal": "\"Stadium Seats per 1,000 People: \" + (format(datum[\"seats_per_1000\"], \"\")) + \"; Country: \" + (isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"]) + \"; seats_per_1000: \" + (format(datum[\"seats_per_1000\"], \"\")) + \"; Rank: \" + (format(datum[\"rank\"], \"\")) + \"; Confederation: \" + (isValid(datum[\"confederation\"]) ? datum[\"confederation\"] : \"\"+datum[\"confederation\"]) + \"; Seats per 1,000 people: \" + (format(datum[\"seats_per_1000\"], \".2f\")) + \"; Total Stadium Capacity: \" + (format(datum[\"total_capacity\"], \",\")) + \"; Number of Stadiums: \" + (format(datum[\"stadium_count\"], \"\")) + \"; Population: \" + (format(datum[\"population\"], \",\"))"
+            "signal": "{\"Rank\": format(datum[\"rank\"], \"\"), \"Country\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"], \"Seats per 1,000 people\": format(datum[\"seats_per_1000\"], \".2f\"), \"Total Stadium Capacity\": format(datum[\"total_capacity\"], \",\"), \"Number of Stadiums\": format(datum[\"stadium_count\"], \"\"), \"Population\": format(datum[\"population\"], \",\")}"
           },
           "x": {"scale": "x", "field": "seats_per_1000_end"},
           "x2": {"scale": "x", "field": "seats_per_1000_start"},
