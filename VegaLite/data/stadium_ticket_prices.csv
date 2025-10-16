@@ -1,7 +1,16 @@
-﻿stadium,country,city,capacity,avg_ticket_price_usd,home_team,league,continent,year_built
-Camp Nou,Spain,Barcelona,99354.00,65.00,FC Barcelona,La Liga,Europe,1957
-Wembley Stadium,England,London,90000.00,85.00,England NT,UEFA,Europe,2007
-Maracanã,Brazil,Rio de Janeiro,78838.00,25.00,Brazil NT,CONMEBOL,South America,1950
-Santiago Bernabéu,Spain,Madrid,81044.00,95.00,Real Madrid,La Liga,Europe,1947
-Estadio Azteca,Mexico,Mexico City,87523.00,30.00,Club América,Liga MX,North America,1966
-Lusail Stadium,Qatar,Lusail,88966.00,150.00,Qatar NT,AFC,Asia,2022
+﻿stadium,country,capacity,avg_ticket_price_usd,home_team,league,continent
+Camp Nou,Spain,99354,65,FC Barcelona,La Liga,Europe
+Wembley Stadium,England,90000,85,England NT,UEFA,Europe
+Maracanã,Brazil,78838,25,Brazil NT,CONMEBOL,South America
+Santiago Bernabéu,Spain,81044,95,Real Madrid,La Liga,Europe
+Estadio Azteca,Mexico,87523,30,Club América,Liga MX,North America
+Lusail Stadium,Qatar,88966,150,Qatar NT,AFC,Asia
+Estadio Monumental,Argentina,83200,10,River Plate,CONMEBOL,South America
+La Bombonera,Argentina,54000,20,Boca Juniors,Primera División,South America
+Mineirão,Brazil,61800,12,Cruzeiro,Serie A,South America
+Estadio Centenario,Uruguay,60000,10,Peñarol / Nacional,Primera División,South America
+Estadio Nacional,Chile,48000,12,Chile NT,N/A,South America
+Estadio Mario Kempes,Argentina,57000,14,Talleres,Primera División,South America
+Castelão,Brazil,63000,9,Fortaleza EC,Serie A,South America
+Estadio Metropolitano,Colombia,46700,13,Atlético Junior,Categoría Primera A,South America
+Estadio Nacional del Perú,Peru,50000,11,Peru NT,N/A,South America
