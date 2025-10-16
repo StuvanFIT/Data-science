@@ -1,0 +1,198 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "background": "#f5f5f5",
+  "padding": 5,
+  "width": 800,
+  "height": 600,
+  "title": {
+    "text": "Football is Life: Stadium Seats Per Capita",
+    "subtitle": "Where football transcends sport and becomes cultural identity, whether the country is big or small!",
+    "fontSize": 20,
+    "anchor": "start",
+    "subtitleFontSize": 14,
+    "subtitleColor": "gray"
+  },
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/stadium_capacities.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["Country", "IOC"],
+          "ops": ["sum", "count", "max"],
+          "fields": ["Capacity", null, "Population"],
+          "as": ["total_capacity", "stadium_count", "population"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.total_capacity / datum.population",
+          "as": "seats_per_capita"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.seats_per_capita * 1000",
+          "as": "seats_per_1000"
+        },
+        {"type": "filter", "expr": "datum.seats_per_1000 >= minSeats"},
+        {"type": "filter", "expr": "datum.stadium_count >= minStadiums"},
+        {
+          "type": "window",
+          "params": [null],
+          "as": ["rank"],
+          "ops": ["rank"],
+          "fields": [null],
+          "sort": {"field": ["seats_per_1000"], "order": ["descending"]}
+        },
+        {"type": "filter", "expr": "datum.rank <= topN"}
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": ["Country"],
+          "field": "seats_per_1000",
+          "sort": {"field": ["seats_per_1000"], "order": ["ascending"]},
+          "as": ["seats_per_1000_start", "seats_per_1000_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"seats_per_1000\"]) && isFinite(+datum[\"seats_per_1000\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "minSeats",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "name": "Min Seats per 1,000: "
+      }
+    },
+    {
+      "name": "minStadiums",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "name": "Min Number of Stadiums: "
+      }
+    },
+    {
+      "name": "topN",
+      "value": 30,
+      "bind": {
+        "input": "range",
+        "min": 10,
+        "max": 100,
+        "step": 5,
+        "name": "Show Top N Countries: "
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "rect",
+      "style": ["bar"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "cursor": {"value": "pointer"},
+          "fill": {"scale": "color", "field": "seats_per_1000"},
+          "tooltip": {
+            "signal": "{\"Rank\": format(datum[\"rank\"], \"\"), \"Country\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"], \"Seats per 1,000 people\": format(datum[\"seats_per_1000\"], \".2f\"), \"Total Stadium Capacity\": format(datum[\"total_capacity\"], \",\"), \"Number of Stadiums\": format(datum[\"stadium_count\"], \"\"), \"Population\": format(datum[\"population\"], \",\")}"
+          },
+          "x": {"scale": "x", "field": "seats_per_1000_end"},
+          "x2": {"scale": "x", "field": "seats_per_1000_start"},
+          "y": {"scale": "y", "field": "Country"},
+          "height": {"signal": "max(0.25, bandwidth('y'))"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {
+        "data": "data_0",
+        "fields": ["seats_per_1000_start", "seats_per_1000_end"]
+      },
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "y",
+      "type": "band",
+      "domain": {
+        "data": "source_0",
+        "field": "Country",
+        "sort": {"op": "min", "field": "seats_per_1000", "order": "descending"}
+      },
+      "range": [0, {"signal": "height"}],
+      "paddingInner": 0.1,
+      "paddingOuter": 0.05
+    },
+    {
+      "name": "color",
+      "type": "log",
+      "domain": {"data": "data_0", "field": "seats_per_1000"},
+      "range": {"scheme": "oranges"},
+      "interpolate": "hcl"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": true,
+      "gridOpacity": 0.3,
+      "gridScale": "y",
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Stadium Seats per 1,000 People",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "labelFontSize": 11,
+      "labelLimit": 150,
+      "zindex": 0
+    }
+  ],
+  "config": {
+    "axis": {"labelColor": "#555", "titleColor": "#333"},
+    "style": {"cell": {"stroke": null}}
+  }
+}
