@@ -2,8 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "white",
   "padding": 5,
-  "width": 300,
-  "height": 300,
+  "width": 500,
+  "height": 500,
+  "title": {
+    "text": "Ticket Prices Vs Stadium Capacity",
+    "subtitle": "Football as an accessible cultural experience.",
+    "fontSize": 20,
+    "anchor": "start",
+    "subtitleFontSize": 14,
+    "subtitleColor": "gray"
+  },
   "style": "cell",
   "data": [
     {

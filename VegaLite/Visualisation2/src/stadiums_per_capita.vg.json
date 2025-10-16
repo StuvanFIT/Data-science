@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "#f5f5f5",
   "padding": 5,
-  "width": 800,
-  "height": 600,
+  "width": 500,
+  "height": 500,
   "title": {
     "text": "Football is Life: Stadium Seats Per Capita",
     "subtitle": "Where football transcends sport and becomes cultural identity, whether the country is big or small!",
