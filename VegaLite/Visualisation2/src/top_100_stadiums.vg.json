@@ -5,39 +5,38 @@
   "width": 950,
   "height": 550,
   "title": {
-    "text": "Global Distribution of the Top 100 Football (Soccer) Stadiums by Capacity (2024)",
-    "fontSize": 25,
+    "text": "Top 100 Global Football Stadiums by Capacity (2024)",
+    "fontSize": 22,
     "anchor": "start",
-    "color": "#17212b",
-    "offset": 10
+    "color": "#1e293b",
+    "subtitle": "The world’s largest football cathedrals, where culture meets passion."
   },
   "style": "view",
   "data": [
-    {"name": "source_0", "values": [{"type": "Sphere"}]},
     {
-      "name": "source_2",
+      "name": "source_0",
       "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json",
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
       "name": "source_1",
-      "transform": [{"type": "graticule", "step": [15, 15]}]
+      "transform": [{"type": "graticule", "step": [20, 20]}]
     },
     {
-      "name": "source_3",
-      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/stadiums.csv",
-      "format": {"type": "csv"},
+      "name": "source_2",
+      "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/main/VegaLite/data/stadiums.csv",
+      "format": {"type": "csv", "delimiter": ","},
       "transform": [
         {
           "type": "geojson",
           "fields": ["longitude", "latitude"],
-          "signal": "layer_3_geojson_0"
+          "signal": "layer_2_geojson_0"
         },
         {
           "type": "geopoint",
           "projection": "projection",
           "fields": ["longitude", "latitude"],
-          "as": ["layer_3_x", "layer_3_y"]
+          "as": ["layer_2_x", "layer_2_y"]
         },
         {
           "type": "filter",
@@ -51,9 +50,9 @@
       "name": "projection",
       "size": {"signal": "[width, height]"},
       "fit": {
-        "signal": "[data('source_0'), data('source_1'), data('source_2'), layer_3_geojson_0]"
+        "signal": "[data('source_0'), data('source_1'), layer_2_geojson_0]"
       },
-      "type": "naturalEarth1"
+      "type": "equalEarth"
     }
   ],
   "marks": [
@@ -64,7 +63,8 @@
       "from": {"data": "source_0"},
       "encode": {
         "update": {
-          "fill": {"value": "#c1e3ee"},
+          "fill": {"value": "#f2efe9"},
+          "stroke": {"value": "#cccccc"},
           "ariaRoleDescription": {"value": "geoshape"}
         }
       },
@@ -77,11 +77,10 @@
       "from": {"data": "source_1"},
       "encode": {
         "update": {
-          "opacity": {"value": 0.6},
-          "fill": {"value": null},
-          "stroke": {"value": "#7c7e7e"},
-          "strokeWidth": {"value": 0.5},
-          "strokeDash": {"value": [1, 1]},
+          "opacity": {"value": 0.5},
+          "stroke": {"value": "#94a3b8"},
+          "strokeWidth": {"value": 0.4},
+          "fill": {"value": "transparent"},
           "ariaRoleDescription": {"value": "geoshape"}
         }
       },
@@ -89,39 +88,25 @@
     },
     {
       "name": "layer_2_marks",
-      "type": "shape",
-      "style": ["geoshape"],
+      "type": "symbol",
+      "style": ["circle"],
       "from": {"data": "source_2"},
       "encode": {
         "update": {
-          "fill": {"value": "#e9dbac"},
-          "stroke": {"value": "#ccc7c7"},
+          "opacity": {"value": 0.8},
+          "stroke": {"value": "white"},
           "strokeWidth": {"value": 0.5},
-          "ariaRoleDescription": {"value": "geoshape"}
-        }
-      },
-      "transform": [{"type": "geoshape", "projection": "projection"}]
-    },
-    {
-      "name": "layer_3_marks",
-      "type": "symbol",
-      "style": ["circle"],
-      "from": {"data": "source_3"},
-      "encode": {
-        "update": {
-          "opacity": {"value": 0.85},
-          "stroke": {"value": "#2c3e50"},
-          "strokeWidth": {"value": 0.5},
+          "size": {"value": 500},
           "fill": {"scale": "color", "field": "capacity"},
           "tooltip": {
-            "signal": "{\"Football Club\": isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"], \"Stadium Name\": isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"], \"Capacity\": format(datum[\"capacity\"], \",\"), \"Latitude\": format(datum[\"latitude\"], \".3f\"), \"Longitude\": format(datum[\"longitude\"], \".3f\")}"
+            "signal": "{\"Stadium\": isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"], \"Home Team\": isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"], \"Country\": isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"], \"Capacity\": format(datum[\"capacity\"], \",\")}"
           },
           "ariaRoleDescription": {"value": "circle"},
           "description": {
-            "signal": "\"longitude: \" + (format(datum[\"longitude\"], \"\")) + \"; latitude: \" + (format(datum[\"latitude\"], \"\")) + \"; Capacity Range: \" + (format(datum[\"capacity\"], \"\")) + \"; Football Club: \" + (isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"]) + \"; Stadium Name: \" + (isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"]) + \"; Capacity: \" + (format(datum[\"capacity\"], \",\")) + \"; Latitude: \" + (format(datum[\"latitude\"], \".3f\")) + \"; Longitude: \" + (format(datum[\"longitude\"], \".3f\"))"
+            "signal": "\"longitude: \" + (format(datum[\"longitude\"], \"\")) + \"; latitude: \" + (format(datum[\"latitude\"], \"\")) + \"; capacity: \" + (format(datum[\"capacity\"], \"\")) + \"; Stadium: \" + (isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"]) + \"; Home Team: \" + (isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"]) + \"; Country: \" + (isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"]) + \"; Capacity: \" + (format(datum[\"capacity\"], \",\"))"
           },
-          "x": {"field": "layer_3_x"},
-          "y": {"field": "layer_3_y"},
+          "x": {"field": "layer_2_x"},
+          "y": {"field": "layer_2_y"},
           "shape": {"value": "circle"}
         }
       }
@@ -130,8 +115,8 @@
   "scales": [
     {
       "name": "color",
-      "type": "quantize",
-      "domain": {"data": "source_3", "field": "capacity"},
+      "type": "linear",
+      "domain": {"data": "source_2", "field": "capacity"},
       "range": {"scheme": "reds"},
       "interpolate": "hcl",
       "zero": false
@@ -139,16 +124,10 @@
   ],
   "legends": [
     {
-      "labelFontSize": 10,
-      "title": "Stadium Capacity",
-      "titleFontSize": 12,
+      "title": "Capacity",
       "fill": "color",
-      "symbolType": "circle",
-      "encode": {
-        "symbols": {
-          "update": {"stroke": {"value": "#2c3e50"}, "opacity": {"value": 0.85}}
-        }
-      }
+      "gradientLength": {"signal": "clamp(height, 64, 200)"},
+      "encode": {"gradient": {"update": {"opacity": {"value": 0.8}}}}
     }
   ],
   "config": {}
