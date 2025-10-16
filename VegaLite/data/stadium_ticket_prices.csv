@@ -1,7 +1,7 @@
 ﻿stadium,country,city,capacity,avg_ticket_price_usd,home_team,league,continent,year_built
-Camp Nou,Spain,Barcelona,"99,354",65,FC Barcelona,La Liga,Europe,1957
-Wembley Stadium,England,London,"90,000",85,England NT,UEFA,Europe,2007
-Maracanã,Brazil,Rio de Janeiro,"78,838",25,Brazil NT,CONMEBOL,South America,1950
-Santiago Bernabéu,Spain,Madrid,"81,044",95,Real Madrid,La Liga,Europe,1947
-Estadio Azteca,Mexico,Mexico City,"87,523",30,Club América,Liga MX,North America,1966
-Lusail Stadium,Qatar,Lusail,"88,966",150,Qatar NT,AFC,Asia,2022
+Camp Nou,Spain,Barcelona,99354.00,65.00,FC Barcelona,La Liga,Europe,1957
+Wembley Stadium,England,London,90000.00,85.00,England NT,UEFA,Europe,2007
+Maracanã,Brazil,Rio de Janeiro,78838.00,25.00,Brazil NT,CONMEBOL,South America,1950
+Santiago Bernabéu,Spain,Madrid,81044.00,95.00,Real Madrid,La Liga,Europe,1947
+Estadio Azteca,Mexico,Mexico City,87523.00,30.00,Club América,Liga MX,North America,1966
+Lusail Stadium,Qatar,Lusail,88966.00,150.00,Qatar NT,AFC,Asia,2022
