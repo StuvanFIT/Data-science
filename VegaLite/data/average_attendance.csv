@@ -1,0 +1,101 @@
+﻿RANK,CLUB,STADIUM_NAME,STADIUM_CAPACITY,AVERAGE_ATTENDANCE,OCCUPANCY_PERCENTAGE
+1,River Plate,Estadio Mas Monumental,84567,84025,0.9936
+2,Borussia Dortmund,Signal Iduna Park,81365,81305,0.9993
+3,Bayern Munich,Allianz Arena,75024,75000,0.9997
+4,Manchester United,Old Trafford,74879,73700,0.9843
+5,Inter Milan,San Siro,80018,72838,0.9103
+6,Real Madrid,Santiago Bernabeu,81044,72061,0.8891
+7,AC Milan,San Siro,80018,72000,0.8998
+8,AS Roma,Stadio Olimpico,73261,62925,0.859
+9,West Ham United,London Stadium,62500,62440,0.999
+10,Tottenham Hotspur,Tottenham Hotspur Stadium,62850,62000,0.9865
+11,Marseille,Orange Velodrome,67394,63587,0.9435
+12,Arsenal,Emirates Stadium,60704,62000,1.0213
+13,Atletico Madrid,Civitas Metropolitano,70460,60717,0.8617
+14,Schalke 04,Veltins-Arena,62271,61438,0.9866
+15,Benfica,Estadio da Luz,65647,60108,0.9156
+16,Celtic,Celtic Park,60411,58533,0.9689
+17,Eintracht Frankfurt,Deutsche Bank Park,58000,57500,0.9914
+18,Liverpool,Anfield,61015,57000,0.9342
+19,Atletico Madrid,Civitas Metropolitano,70460,58917,0.8361
+20,Hamburg SV,Volksparkstadion,57000,55871,0.9802
+21,Boca Juniors,La Bombonera,49000,55790,1.1386
+22,Newcastle United,St James' Park,52305,52000,0.9942
+23,VfB Stuttgart,MHPArena,60449,55000,0.9099
+24,Flamengo,Maracana,78838,54759,0.6946
+25,Manchester City,Etihad Stadium,53400,53500,1.0019
+26,Chelsea,Stamford Bridge,40341,39800,0.9866
+27,Rangers,Ibrox Stadium,50817,50987,1.0033
+28,Everton,Goodison Park,39414,39000,0.9895
+29,Aston Villa,Villa Park,42640,41500,0.9733
+30,Leeds United,Elland Road,37890,36500,0.9633
+31,Sunderland,Stadium of Light,49000,41000,0.8367
+32,PSG,Parc des Princes,47929,45000,0.9389
+33,Sevilla,Ramon Sanchez Pizjuan,43883,35600,0.8112
+34,Barcelona,Estadi Olimpic Lluis Companys,55926,55000,0.9834
+35,Athletic Bilbao,San Mames,53289,48000,0.9008
+36,Valencia,Mestalla,49430,42000,0.8497
+37,Real Betis,Benito Villamarin,60720,51500,0.8481
+38,Napoli,Stadio Diego Armando Maradona,54726,45000,0.8223
+39,Juventus,Allianz Stadium,41507,40000,0.9637
+40,Lazio,Stadio Olimpico,73261,44000,0.6006
+41,Fiorentina,Stadio Artemio Franchi,43147,38000,0.8807
+42,Atalanta,Gewiss Stadium,24950,20500,0.8216
+43,Bologna,Stadio Renato Dall'Ara,38279,30000,0.7837
+44,Borussia Monchengladbach,Borussia Park,54057,52000,0.9619
+45,Bayer Leverkusen,BayArena,30210,30000,0.993
+46,RB Leipzig,Red Bull Arena,47069,44000,0.9348
+47,Union Berlin,Stadion An der Alten Forsterei,22012,21500,0.9767
+48,Hertha Berlin,Olympiastadion,74475,42000,0.564
+49,Werder Bremen,Weserstadion,42100,40000,0.9501
+50,FC Koln,RheinEnergieStadion,50000,48000,0.96
+51,Lyon,Groupama Stadium,59186,42000,0.7096
+52,Lille,Stade Pierre-Mauroy,50186,35000,0.6974
+53,Monaco,Stade Louis II,18523,12000,0.6478
+54,Lens,Stade Bollaert-Delelis,38223,37000,0.968
+55,Rennes,Roazhon Park,29778,25000,0.8395
+56,Ajax,Johan Cruyff Arena,54990,52000,0.9456
+57,PSV Eindhoven,Philips Stadion,35000,34000,0.9714
+58,Feyenoord,De Kuip,51117,47000,0.9195
+59,Galatasaray,Turk Telekom Stadium,52280,49000,0.9373
+60,Fenerbahce,Sukru Saracoglu Stadium,50530,47000,0.9301
+61,Besiktas,Vodafone Park,41903,39000,0.9307
+62,Porto,Estadio do Dragao,50033,44000,0.8793
+63,Sporting CP,Estadio Jose Alvalade,50095,42000,0.8385
+64,Shakhtar Donetsk,NSK Olimpiyskiy,70050,30000,0.4283
+65,Dynamo Kyiv,NSK Olimpiyskiy,70050,25000,0.3569
+66,Olympiacos,Karaiskakis Stadium,32115,29000,0.903
+67,Panathinaikos,Apostolos Nikolaidis Stadium,16003,14000,0.8748
+68,Copenhagen,Parken,38065,31000,0.8144
+69,Brondby,Brondby Stadium,29000,25000,0.8621
+70,Rosenborg,Lerkendal Stadion,21421,17000,0.7936
+71,AIK,Friends Arena,50653,23000,0.454
+72,Celtic,Celtic Park,60411,58000,0.9599
+73,Anderlecht,Lotto Park,21500,18000,0.8372
+74,Club Brugge,Jan Breydel Stadium,29042,26000,0.8952
+75,Standard Liege,Stade Maurice Dufrasne,27670,21000,0.7589
+76,Red Star Belgrade,Rajko Mitic Stadium,53000,48000,0.9057
+77,Partizan Belgrade,Stadion Partizana,32710,28000,0.8559
+78,Dinamo Zagreb,Stadion Maksimir,35123,20000,0.5694
+79,Spartak Moscow,Otkrytiye Arena,45360,38000,0.8378
+80,CSKA Moscow,VEB Arena,30000,25000,0.8333
+81,Zenit St Petersburg,Gazprom Arena,68134,50000,0.7339
+82,Fluminense,Maracana,78838,42000,0.5327
+83,Palmeiras,Allianz Parque,43713,38000,0.8693
+84,Corinthians,Neo Quimica Arena,47605,42000,0.8823
+85,Sao Paulo,Morumbi,66795,45000,0.6736
+86,Gremio,Arena do Gremio,55662,45000,0.8084
+87,Atletico Mineiro,Arena MRV,46000,42000,0.913
+88,Cruzeiro,Mineirao,61846,38000,0.6145
+89,Boca Juniors,La Bombonera,49000,45000,0.9184
+90,San Lorenzo,Nuevo Gasometro,47964,35000,0.7298
+91,Independiente,Estadio Libertadores de America,52823,32000,0.6058
+92,Racing Club,Estadio Presidente Peron,51389,38000,0.7395
+93,Atlanta United,Mercedes-Benz Stadium,42500,45000,1.0588
+94,Seattle Sounders,Lumen Field,37722,32000,0.8483
+95,LA Galaxy,Dignity Health Sports Park,27000,24000,0.8889
+96,Portland Timbers,Providence Park,25218,23000,0.9121
+97,Austin FC,Q2 Stadium,20738,19500,0.9403
+98,Club America,Estadio Azteca,87000,45000,0.5172
+99,Cruz Azul,Estadio Azteca,87000,38000,0.4368
+100,Chivas Guadalajara,Estadio Akron,46232,42000,0.9085
