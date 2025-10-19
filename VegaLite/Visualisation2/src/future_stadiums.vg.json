@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Future Football Stadiums: Places for Everyone to Gather",
+    "fontSize": 20,
+    "anchor": "middle",
+    "subtitle": "Cultural monuments being built across the world, creating memories for generations",
+    "subtitleFontSize": 14
+  },
+  "width": 950,
+  "height": 550,
+  "data": {
+    "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/future_stadiums.csv"
+  },
+  "projection": {"type": "naturalEarth1"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8e8e8",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {"graticule": true},
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#94a3b8",      
+        "strokeWidth": 0.5,
+        "opacity": 0.3
+      }
+    },
+    {
+      "transform": [{"filter": "datum.opening_year >= yearSlider"}],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.8,
+        "stroke": "#fff",
+        "strokeWidth": 1.5,
+        "size": 300
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Under Construction", "Proposed"],
+            "range": ["green", "#f59e0b"]
+          },
+          "legend": {"title": "Status", "orient": "bottom-right"}
+        },
+        "tooltip": [
+          {"field": "stadium_name", "title": "Stadium"},
+          {"field": "city", "title": "City"},
+          {"field": "country", "title": "Country"},
+          {"field": "capacity", "title": "Capacity", "format": ","},
+          {"field": "opening_year", "title": "Opening Year"},
+          {"field": "status", "title": "Status"}
+        ]
+      }
+    }
+  ],
+  "params": [
+    {
+      "name": "yearSlider",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2025,
+        "max": 2032,
+        "step": 1,
+        "name": "Show future stadiums from year: "
+      }
+    }
+  ]
+}
