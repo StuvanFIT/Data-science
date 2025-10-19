@@ -172,10 +172,77 @@
 
             </div>
         </section>
+        <footer class="text-center text-sm font-medium mt-8 space-y-2 text-gray-700">
+            <p>
+                Authored by 
+                <a 
+                href="https://github.com/StuvanFIT" 
+                class="underline hover:text-blue-500 transition-colors"
+                target="_blank" 
+                rel="noopener noreferrer"
+                >
+                Steven Kaing
+                </a>
+            </p>
 
-        <footer class="font-bold text-2xl">
-            Authored By <a href="https://github.com/StuvanFIT" class="underline">Steven Kaing</a>
+            <div>
+                <p class="font-semibold">Data Sources:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-600 text-xs font-normal">
+                    <li>
+                        <a 
+                        href="https://query.wikidata.org/#SELECT%20%3Fclub%20%3FclubLabel%20%3Fvenue%20%3FvenueLabel%20%3Fcoordinates%0AWHERE%0A%7B%0A%09%3Fclub%20wdt%3AP31%20wd%3AQ476028%20.%0A%09%3Fclub%20wdt%3AP115%20%3Fvenue%20.%0A%09%3Fvenue%20wdt%3AP625%20%3Fcoordinates%20.%0A%09SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20%7D%0A%7D" 
+                        class="underline hover:text-blue-500 transition-colors"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        >
+                        Global Stadiums (Wikidata Query)
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                        href="https://www.kaggle.com/datasets/imtkaggleteam/football-stadiums" 
+                        class="underline hover:text-blue-500 transition-colors"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        >
+                        Kaggle: Stadium Capacities
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                        href="https://www.transfermarkt.com/verein-statistik/zuschauerrangliste/statistik?wettbewerb=liga&sortierung=best&selectedOptionKey=0&plus=1" 
+                        class="underline hover:text-blue-500 transition-colors"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        >
+                        Occupancy & Attendance (Transfermarkt)
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                        href="https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_stadiums" 
+                        class="underline hover:text-blue-500 transition-colors"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        >
+                        Host Stadiums (Wikipedia)
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                        href="https://en.wikipedia.org/wiki/List_of_future_stadiums" 
+                        class="underline hover:text-blue-500 transition-colors"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        >
+                        Future stadiums
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </footer>
+
+
 
 
     </body>
