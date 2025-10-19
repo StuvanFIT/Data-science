@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Football Stadiums on the global stage",
+    "fontSize": 18,
+    "anchor": "middle",
+    "fontWeight": "bold",
+    "subtitle": [
+      "A century of growth: how football's greatest tournament evolved from 3 stadiums to spanning continents",
+      " "
+    ],
+    "subtitleFontSize": 13,
+    "subtitleFont": "Georgia",
+    "subtitleColor": "#4a4a4a"
+  },
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/world_cup_hosts.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Cities", "Stadiums"],
+      "as": ["Category", "Count"]
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "opacity": 0.7,
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "axis": {
+        "title": "World Cup Year",
+        "titleFontSize": 14,
+        "labelAngle": -45,
+        "format": "d"
+      },
+      "scale": {
+        "domain": [1930, 2026]
+      }
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of Cities & Stadiums",
+        "titleFontSize": 14
+      },
+      "stack": "zero"
+    },
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Cities", "Stadiums"],
+        "range": ["#2563eb", "#10b981"]
+      },
+      "legend": {
+        "title": "Metric",
+        "orient": "top-right",
+        "titleFontSize": 13
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {"field": "Host", "type": "nominal", "title": "Host Nation(s)"},
+      {"field": "Cities", "type": "quantitative", "title": "Cities"},
+      {"field": "Stadiums", "type": "quantitative", "title": "Stadiums"}
+    ]
+  }
+}

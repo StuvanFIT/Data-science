@@ -4,6 +4,7 @@ var vg_2 = "stadiums_per_capita.vg.json";
 var vg_3 = "ticket_prices.vg.json";
 var vg_4 = "average_attendance.vg.json";
 var vg_5 = "future_stadiums.vg.json";
+var vg_6 = "world_cup_hosts.vg.json";
 
 
 
@@ -37,5 +38,13 @@ vegaEmbed("#future_stadiums", vg_5).then(function(result) {
     result.view;
 
 }).catch(console.error);
+
+vegaEmbed("#world_cup_hosts", vg_6).then(function(result) {
+    
+    result.view;
+
+}).catch(console.error);
+
+
 
 
