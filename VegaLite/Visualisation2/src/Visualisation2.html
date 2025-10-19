@@ -12,13 +12,13 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-        <title>The World’s Game, The World’s Stadiums</title>
+        <title>The World's Game, The World's Stadiums</title>
     </head>
 
     <body class="min-h-screen bg-gray-200 flex flex-col items-center space-y-16">
         <header class="text-center mt-8 mb-20">
             <h1 class="text-5xl font-serif font-semibold text-slate-800 tracking-tight">
-            The World’s Game, <span class="text-red-600 italic">The World’s Stadiums</span>
+            The World's Game, <span class="text-red-600 italic">The World's Stadiums</span>
             </h1>
         </header>
 
@@ -32,14 +32,17 @@
             <div id="geo_map" class=""></div>
         </section>
 
+        <h3 class="text-3xl font-serif font-semibold text-slate-800 tracking-tight">
+            Football Stadiums are accessible for <span class="text-red-600 italic">everyone</span>
+        </h3>
         
         <p class="text-center max-w-4xl">
-            From the bustling streets of São Paulo to the historic towns of Germany, football isn’t just a pastime, it’s part of the social fabric. Countries with a high number of stadiums per capita show a
+            From the bustling streets of São Paulo to the historic towns of Germany, football isn't just a pastime, it's part of the social fabric. Countries with a high number of stadiums per capita show a
             commitment to keeping the sport accessible and central to community life, making stadiums a modern cultural landmark.
         </p>
 
         <p class="text-center max-w-4xl">            
-            When you think of European Football, you think of massive stadiums with high ticket prices. On the other hand, countires in South America
+            When you think of European Football, you think of massive stadiums with high ticket prices. On the other hand, countries in South America
             often prioritise accessibility. Even in the largest stadiums, tickets remain affordable, ensuring that football remains a shared cultural experience, not a privilege for a few.
         </p>
         <div class="flex">
@@ -51,41 +54,53 @@
 
         </div>
 
-        <section class="flex flex-col items-center justify-center space-y-8 max-w-4xl text-gray-700 p-4">
-            <h2 class="text-3xl font-semibold text-center text-slate-800">
-                Small Town Passion vs. Global Spectacle
-            </h2>
+        <h3 class="text-3xl font-serif font-semibold text-slate-800 tracking-tight">
+            No Matter the Wealth, <span class="text-red-600 italic"> the Passion Is Shared</span>
+        </h3>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        <section class="flex flex-col md:flex-row items-stretch justify-center gap-8 max-w-6xl p-4">
 
-                <div class="flex flex-col items-center space-y-2">
-                    <img src="../../data/Faroe-Island-Stadium.jpg" alt="Faroe Islands Football Stadium" class="w-64 h-40 object-cover rounded shadow-md">
-                    <p class="text-center">
-                        Faroe Islands Stadium, modest in size but central to community life. Football here is a shared cultural ritual.
-                    </p>
-                </div>
-
-                <div class="flex flex-col items-center space-y-2">
-                    <img src="../../data/santiago-bernabeu.jpg" alt="Santiago Bernabeu Stadium" class="w-64 h-40 object-cover rounded shadow-md">
-                    <p class="text-center">
-                        Santiago Bernabeu, one of the world’s iconic stadiums. Massive, historic, and globally recognised, hosting millions of fans over generations.
-                    </p>
-                </div>
+            
+            <div class="flex-1 bg-white rounded-lg shadow-lg p-6 flex flex-col">
+                <img src="../../data/Faroe-Island-Stadium.jpg" alt="Faroe Islands Football Stadium" class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+                
+                <p class="text-gray-700 leading-relaxed flex-grow">
+                    In the Faroe Islands, the stadium is more than a venue, it's the beating heart of the community. Here, football transcends sport, becoming a weekly ritual that brings neighbors together. Every match is a pilgrimage, every seat filled with familiar faces. These modest cathedrals prove that passion isn't measured in capacity, but in the unwavering devotion of those who gather.
+                </p>
             </div>
 
-            <p class="text-center max-w-3xl text-gray-600">
-                Football stadiums serve both as community centers in smaller nations and as global cultural
-                landmarks in larger ones. Whether modest or monumental, stadiums are at the heart of football culture worldwide.
-            </p>
+            <div class="flex-1 bg-white rounded-lg shadow-lg p-6 flex flex-col">
+                <img src="../../data/santiago-bernabeu.jpg" alt="Santiago Bernabeu Stadium" class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+                <p class="text-gray-700 leading-relaxed flex-grow">
+                    The Santiago Bernabéu stands as a monument to football's global reach, a cathedral of concrete and steel where 80,000 worshippers gather in unified devotion. This isn't just a stadium; it's a pilgrimage site that has witnessed generations of faithful fans. From legendary Champions League nights to historic El Clásicos, the Bernabéu represents football's power to unite millions under one roof, creating moments that echo through history.
+                </p>
+            </div>
         </section>
 
-
-
-
-
-        <h3 class="text-center max-w-4xl font-bold">
-            Here, the sport is about community, identity, and belonging.
+        <h3 class="text-3xl font-serif font-semibold text-slate-800 tracking-tight mb-6">
+            The <span class="text-red-600 italic">Faithful</span> Return Every Week
         </h3>
+
+
+        <section class="flex flex-col items-center justify-center space-y-8 max-w-5xl p-4">
+            
+            <div class="text-center max-w-4xl text-gray-700 space-y-4">
+                <p class="text-lg leading-relaxed">
+                    True devotion is measured not just by the size of the cathedral, but by how faithfully its congregation returns.
+                    Week after week, match after match, millions of fans make their pilgrimage to these modern temples.
+                    The numbers tell a compelling story: stadiums like Signal Iduna Park and Old Trafford consistently
+                    fill to 99% capacity, with over 70,000 faithful attendees every single match day.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    When Boca Juniors' La Bombonera exceeds 100% capacity, with more pilgrims than seats available,
+                    we witness something profound: a cultural force so widespread, such that the football stadium itself cannot hold everyone!
+                    These stadiums are sacred spaces where communities gather, identities are forged, and memories are made.
+                </p>
+            </div>
+
+            <div id="average_attendance"></div>
+        </section>
+
     </body>
 
     <script src="embedVegaLite.js"></script>

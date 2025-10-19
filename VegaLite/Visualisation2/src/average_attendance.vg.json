@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Stadium Devotion: Capacity Vs Occupancy",
+    "subtitle": "How devoted are the fans to attend stadium games?",
+    "fontSize": 20,
+    "anchor": "start",
+    "subtitleFontSize": 14,
+    "subtitleColor": "gray"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/refs/heads/main/VegaLite/data/average_attendance.csv"
+  },
+  "width": 700,
+  "height": 450,
+  "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "size":300
+  },
+  "encoding": {
+    "x": {
+      "field": "STADIUM_CAPACITY",
+      "type": "quantitative",
+      "title": "Stadium Capacity"
+    },
+    "y": {
+      "field": "OCCUPANCY_PERCENTAGE",
+      "type": "quantitative",
+      "title": "Occupancy Rate",
+      "axis": {"format": ".0%"}
+    },
+    "color": {
+      "field": "OCCUPANCY_PERCENTAGE",
+      "type": "quantitative",
+      "scale": {"scheme": "redblue"},
+      "legend": {"format": ".0%"}
+    },
+    "tooltip": [
+      {"field": "CLUB", "title": "Club"},
+      {"field": "STADIUM_NAME", "title": "Stadium"},
+      {"field": "OCCUPANCY_PERCENTAGE", "format": ".1%", "title": "Occupancy"}
+    ]
+  }
+}

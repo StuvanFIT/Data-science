@@ -1,134 +1,64 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "white",
-  "padding": 5,
   "width": 950,
   "height": 550,
+  "padding": 5,
   "title": {
     "text": "Top 100 Global Football Stadiums by Capacity (2024)",
+    "subtitle": "The world's largest football cathedrals",
     "fontSize": 22,
-    "anchor": "start",
-    "color": "#1e293b",
-    "subtitle": "The world’s largest football cathedrals, where culture meets passion."
+    "color": "#1e293b"
   },
-  "style": "view",
   "data": [
+    {"name": "world", "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json", "format": {"type": "topojson", "feature": "countries"}},
+    {"name": "graticule", "transform": [{"type": "graticule", "step": [20, 20]}]},
     {
-      "name": "source_0",
-      "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json",
-      "format": {"type": "topojson", "feature": "countries"}
-    },
-    {
-      "name": "source_1",
-      "transform": [{"type": "graticule", "step": [20, 20]}]
-    },
-    {
-      "name": "source_2",
+      "name": "stadiums",
       "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/main/VegaLite/data/stadiums.csv",
-      "format": {"type": "csv", "delimiter": ","},
+      "format": {"type": "csv"},
       "transform": [
-        {
-          "type": "geojson",
-          "fields": ["longitude", "latitude"],
-          "signal": "layer_2_geojson_0"
-        },
-        {
-          "type": "geopoint",
-          "projection": "projection",
-          "fields": ["longitude", "latitude"],
-          "as": ["layer_2_x", "layer_2_y"]
-        },
-        {
-          "type": "filter",
-          "expr": "isValid(datum[\"capacity\"]) && isFinite(+datum[\"capacity\"])"
-        }
+        {"type": "geopoint", "projection": "projection", "fields": ["longitude", "latitude"]}
       ]
     }
   ],
   "projections": [
-    {
-      "name": "projection",
-      "size": {"signal": "[width, height]"},
-      "fit": {
-        "signal": "[data('source_0'), data('source_1'), layer_2_geojson_0]"
-      },
-      "type": "equalEarth"
-    }
+    {"name": "projection", "type": "equalEarth", "fit": {"signal": "data('world')"}, "size": {"signal": "[width, height]"}}
+  ],
+  "scales": [
+    {"name": "color", "type": "linear", "domain": {"data": "stadiums", "field": "capacity"}, "range": {"scheme": "reds"}}
+  ],
+  "legends": [
+    {"title": "Capacity", "fill": "color", "gradientLength": 200}
   ],
   "marks": [
     {
-      "name": "layer_0_marks",
       "type": "shape",
-      "style": ["geoshape"],
-      "from": {"data": "source_0"},
-      "encode": {
-        "update": {
-          "fill": {"value": "#f2efe9"},
-          "stroke": {"value": "#cccccc"},
-          "ariaRoleDescription": {"value": "geoshape"}
-        }
-      },
+      "from": {"data": "world"},
+      "encode": {"update": {"fill": {"value": "#f2efe9"}, "stroke": {"value": "#ccc"}}},
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
-      "name": "layer_1_marks",
       "type": "shape",
-      "style": ["geoshape"],
-      "from": {"data": "source_1"},
-      "encode": {
-        "update": {
-          "opacity": {"value": 0.5},
-          "stroke": {"value": "#94a3b8"},
-          "strokeWidth": {"value": 0.4},
-          "fill": {"value": "transparent"},
-          "ariaRoleDescription": {"value": "geoshape"}
-        }
-      },
+      "from": {"data": "graticule"},
+      "encode": {"update": {"stroke": {"value": "#94a3b8"}, "strokeWidth": {"value": 0.4}, "fill": {"value": null}, "opacity": {"value": 0.5}}},
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
-      "name": "layer_2_marks",
       "type": "symbol",
-      "style": ["circle"],
-      "from": {"data": "source_2"},
+      "from": {"data": "stadiums"},
       "encode": {
         "update": {
-          "opacity": {"value": 0.8},
-          "stroke": {"value": "white"},
-          "strokeWidth": {"value": 0.5},
+          "x": {"field": "x"},
+          "y": {"field": "y"},
           "size": {"value": 500},
           "fill": {"scale": "color", "field": "capacity"},
-          "tooltip": {
-            "signal": "{\"Stadium\": isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"], \"Home Team\": isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"], \"Country\": isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"], \"Capacity\": format(datum[\"capacity\"], \",\")}"
-          },
-          "ariaRoleDescription": {"value": "circle"},
-          "description": {
-            "signal": "\"longitude: \" + (format(datum[\"longitude\"], \"\")) + \"; latitude: \" + (format(datum[\"latitude\"], \"\")) + \"; capacity: \" + (format(datum[\"capacity\"], \"\")) + \"; Stadium: \" + (isValid(datum[\"venueLabel\"]) ? datum[\"venueLabel\"] : \"\"+datum[\"venueLabel\"]) + \"; Home Team: \" + (isValid(datum[\"clubLabel\"]) ? datum[\"clubLabel\"] : \"\"+datum[\"clubLabel\"]) + \"; Country: \" + (isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"]) + \"; Capacity: \" + (format(datum[\"capacity\"], \",\"))"
-          },
-          "x": {"field": "layer_2_x"},
-          "y": {"field": "layer_2_y"},
-          "shape": {"value": "circle"}
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.5},
+          "opacity": {"value": 0.8},
+          "tooltip": {"signal": "{'Stadium': datum.venueLabel, 'Team': datum.clubLabel, 'Country': datum.country, 'Capacity': format(datum.capacity, ',')}"}
         }
       }
     }
-  ],
-  "scales": [
-    {
-      "name": "color",
-      "type": "linear",
-      "domain": {"data": "source_2", "field": "capacity"},
-      "range": {"scheme": "reds"},
-      "interpolate": "hcl",
-      "zero": false
-    }
-  ],
-  "legends": [
-    {
-      "title": "Capacity",
-      "fill": "color",
-      "gradientLength": {"signal": "clamp(height, 64, 200)"},
-      "encode": {"gradient": {"update": {"opacity": {"value": 0.8}}}}
-    }
-  ],
-  "config": {}
+  ]
 }

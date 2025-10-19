@@ -1,141 +1,50 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "background": "white",
-  "padding": 5,
   "width": 500,
   "height": 500,
+  "padding": 5,
   "title": {
     "text": "Ticket Prices Vs Stadium Capacity",
-    "subtitle": "Football as an accessible cultural experience.",
+    "subtitle": "Football as an accessible cultural experience",
     "fontSize": 20,
-    "anchor": "start",
     "subtitleFontSize": 14,
     "subtitleColor": "gray"
   },
-  "style": "cell",
   "data": [
     {
-      "name": "source_0",
+      "name": "source",
       "url": "https://raw.githubusercontent.com/StuvanFIT/Data-science/main/VegaLite/data/stadium_ticket_prices.csv",
-      "format": {"type": "csv", "delimiter": ","},
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "isValid(datum[\"capacity\"]) && isFinite(+datum[\"capacity\"]) && isValid(datum[\"avg_ticket_price_usd\"]) && isFinite(+datum[\"avg_ticket_price_usd\"])"
-        }
-      ]
-    }
-  ],
-  "marks": [
-    {
-      "name": "marks",
-      "type": "symbol",
-      "style": ["circle"],
-      "from": {"data": "source_0"},
-      "encode": {
-        "update": {
-          "opacity": {"value": 0.7},
-          "stroke": {"value": "white"},
-          "size": {"value": 250},
-          "fill": {"scale": "color", "field": "continent"},
-          "tooltip": {
-            "signal": "{\"Stadium\": isValid(datum[\"stadium\"]) ? datum[\"stadium\"] : \"\"+datum[\"stadium\"], \"country\": isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"], \"Ticket Price (USD)\": isValid(datum[\"avg_ticket_price_usd\"]) ? datum[\"avg_ticket_price_usd\"] : \"\"+datum[\"avg_ticket_price_usd\"], \"capacity\": isValid(datum[\"capacity\"]) ? datum[\"capacity\"] : \"\"+datum[\"capacity\"], \"home_team\": isValid(datum[\"home_team\"]) ? datum[\"home_team\"] : \"\"+datum[\"home_team\"]}"
-          },
-          "ariaRoleDescription": {"value": "circle"},
-          "description": {
-            "signal": "\"Stadium Capacity: \" + (format(datum[\"capacity\"], \"\")) + \"; Average Ticket Price (USD): \" + (format(datum[\"avg_ticket_price_usd\"], \"\")) + \"; continent: \" + (isValid(datum[\"continent\"]) ? datum[\"continent\"] : \"\"+datum[\"continent\"]) + \"; Stadium: \" + (isValid(datum[\"stadium\"]) ? datum[\"stadium\"] : \"\"+datum[\"stadium\"]) + \"; country: \" + (isValid(datum[\"country\"]) ? datum[\"country\"] : \"\"+datum[\"country\"]) + \"; Ticket Price (USD): \" + (isValid(datum[\"avg_ticket_price_usd\"]) ? datum[\"avg_ticket_price_usd\"] : \"\"+datum[\"avg_ticket_price_usd\"]) + \"; capacity: \" + (isValid(datum[\"capacity\"]) ? datum[\"capacity\"] : \"\"+datum[\"capacity\"]) + \"; home_team: \" + (isValid(datum[\"home_team\"]) ? datum[\"home_team\"] : \"\"+datum[\"home_team\"])"
-          },
-          "x": {"scale": "x", "field": "capacity"},
-          "y": {"scale": "y", "field": "avg_ticket_price_usd"},
-          "shape": {"value": "circle"}
-        }
-      }
+      "format": {"type": "csv"}
     }
   ],
   "scales": [
-    {
-      "name": "x",
-      "type": "linear",
-      "domain": {"data": "source_0", "field": "capacity"},
-      "range": [0, {"signal": "width"}],
-      "nice": true,
-      "zero": true
-    },
-    {
-      "name": "y",
-      "type": "linear",
-      "domain": {"data": "source_0", "field": "avg_ticket_price_usd"},
-      "range": [{"signal": "height"}, 0],
-      "nice": true,
-      "zero": true
-    },
-    {
-      "name": "color",
-      "type": "ordinal",
-      "domain": {"data": "source_0", "field": "continent", "sort": true},
-      "range": "category"
-    }
+    {"name": "x", "type": "linear", "domain": {"data": "source", "field": "capacity"}, "range": "width", "nice": true, "zero": true},
+    {"name": "y", "type": "linear", "domain": {"data": "source", "field": "avg_ticket_price_usd"}, "range": "height", "nice": true, "zero": true},
+    {"name": "color", "type": "ordinal", "domain": {"data": "source", "field": "continent"}, "range": "category"}
   ],
   "axes": [
-    {
-      "scale": "x",
-      "orient": "bottom",
-      "gridScale": "y",
-      "grid": true,
-      "tickCount": {"signal": "ceil(width/40)"},
-      "domain": false,
-      "labels": false,
-      "aria": false,
-      "maxExtent": 0,
-      "minExtent": 0,
-      "ticks": false,
-      "zindex": 0
-    },
-    {
-      "scale": "y",
-      "orient": "left",
-      "gridScale": "x",
-      "grid": true,
-      "tickCount": {"signal": "ceil(height/40)"},
-      "domain": false,
-      "labels": false,
-      "aria": false,
-      "maxExtent": 0,
-      "minExtent": 0,
-      "ticks": false,
-      "zindex": 0
-    },
-    {
-      "scale": "x",
-      "orient": "bottom",
-      "grid": false,
-      "title": "Stadium Capacity",
-      "labelFlush": true,
-      "labelOverlap": true,
-      "tickCount": {"signal": "ceil(width/40)"},
-      "zindex": 0
-    },
-    {
-      "scale": "y",
-      "orient": "left",
-      "grid": false,
-      "title": "Average Ticket Price (USD)",
-      "labelOverlap": true,
-      "tickCount": {"signal": "ceil(height/40)"},
-      "zindex": 0
-    }
+    {"scale": "x", "orient": "bottom", "title": "Stadium Capacity", "grid": true},
+    {"scale": "y", "orient": "left", "title": "Average Ticket Price (USD)", "grid": true}
   ],
   "legends": [
+    {"fill": "color", "title": "Continent", "symbolType": "circle"}
+  ],
+  "marks": [
     {
-      "fill": "color",
-      "symbolType": "circle",
-      "title": "continent",
+      "type": "symbol",
+      "from": {"data": "source"},
       "encode": {
-        "symbols": {
-          "update": {"stroke": {"value": "white"}, "opacity": {"value": 0.7}}
+        "update": {
+          "x": {"scale": "x", "field": "capacity"},
+          "y": {"scale": "y", "field": "avg_ticket_price_usd"},
+          "fill": {"scale": "color", "field": "continent"},
+          "size": {"value": 250},
+          "opacity": {"value": 0.7},
+          "stroke": {"value": "white"},
+          "tooltip": {"signal": "{'Stadium': datum.stadium, 'Country': datum.country, 'Ticket Price': '$' + datum.avg_ticket_price_usd, 'Capacity': format(datum.capacity, ','), 'Team': datum.home_team}"}
         }
       }
     }
-  ],
-  "config": {}
+  ]
 }
